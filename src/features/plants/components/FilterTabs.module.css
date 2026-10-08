@@ -1,0 +1,44 @@
+/* Row of pills. On very narrow phones it scrolls sideways instead of overflowing. */
+.tabs {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tab {
+  flex: 1 1 auto;
+  min-height: var(--tap-target-min);
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.tab:hover:not([data-active]) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.tab[data-active] {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-text-on-fill);
+}
+
+/* Drawn inside the pill: the scrolling row would clip an outside outline */
+.tab:focus-visible {
+  outline-offset: -3px;
+}
+
+.tab[data-active]:focus-visible {
+  outline-color: var(--color-text-on-fill);
+}

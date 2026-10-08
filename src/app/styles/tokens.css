@@ -1,0 +1,84 @@
+:root {
+
+  /* ---- Color: surfaces ---- */
+  --color-bg:            #F7F3E8;  /* guide: Cream, page background and icon tiles */
+  --color-surface:       #FFFFFF;  /* guide: Card White, cards and summary */
+  --color-track:         #E7DFC9;  /* guide: Border, progress track */
+  --color-border:        #E7DFC9;  /* guide: Border, card border and dividers */
+
+  /* ---- Color: Forest (primary) ---- */
+  --color-primary:       #1F6B4A;              /* guide: Forest */
+  --color-primary-hover: #154430;              /* guide: Forest Dark, pressed feedback */
+  --color-primary-tint:  rgba(31, 107, 74, 0.12); /* guide: Forest at 12%, "Watered today" badge */
+  --color-primary-ink:   #1F6B4A;              /* guide: solid Forest text on the tint (5.4:1) */
+
+  /* ---- Color: Amber (needs water) ---- */
+  --color-accent:        #E2922B;              /* guide: Amber, "Mark as watered" button */
+  --color-accent-hover:  #D1821F;              /* derived: pressed state, Ink text still 4.9:1 */
+  --color-accent-tint:   rgba(226, 146, 43, 0.15); /* guide: Amber at 15%, "Needs water" badge */
+  --color-accent-ink:    #94590F;              /* derived: guide's Amber Dark #B9721A is only 3.4:1 on the tint */
+  --color-text-on-accent: #1E2B22;             /* derived: Ink on Amber (5.9:1); white is only 2.5:1 */
+
+  /* ---- Color: neutral controls ---- */
+  --color-muted-bg:      #E9E1CF;  /* sampled: "Mark as needs water" button */
+  --color-muted-ink:     #4F4C40;  /* derived: text on the muted button, darkened to pass contrast */
+  --color-toggle-off:    #CCCCD0;  /* sampled: switch in the off position */
+
+  /* ---- Color: text ---- */
+  --color-text:          #1E2B22;  /* guide: Ink */
+  --color-text-muted:    #686F65;  /* derived: guide Slate #6B7268 is 4.48:1 on Cream, this is 4.68:1 */
+  --color-text-on-fill:  #FFFFFF;  /* text on Forest fills (6.4:1) */
+
+  /* ---- Color: overlay ---- */
+  --color-overlay:       rgba(30, 43, 34, 0.45);  /* derived: Ink, dims the page behind sheets */
+
+  /* ---- Typography ---- */
+  --font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --font-size-2xs:  0.6875rem; /* 11px: badges */
+  --font-size-xs:   0.75rem;   /* 12px: room + frequency line, percentage */
+  --font-size-sm:   0.8125rem; /* 13px: buttons, summary label, helper text */
+  --font-size-md:   1rem;      /* 16px: body, inputs, plant names */
+  --font-size-lg:   1.125rem;  /* 18px: empty state title, sheet title */
+  --font-size-xl:   1.25rem;   /* 20px: summary count */
+  --font-size-2xl:  1.625rem;  /* 26px: page titles */
+
+  --font-weight-regular:  400;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+
+  --line-height-tight:  1.2;
+  --line-height-normal: 1.5;
+
+  --letter-spacing-badge: 0.03em;  /* guide: badge text */
+
+  /* ---- Spacing (4px scale) ---- */
+  --space-1:  0.25rem;  /*  4px */
+  --space-2:  0.5rem;   /*  8px */
+  --space-3:  0.75rem;  /* 12px */
+  --space-4:  1rem;     /* 16px */
+  --space-5:  1.25rem;  /* 20px */
+  --space-6:  1.5rem;   /* 24px */
+  --space-8:  2rem;     /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+
+  /* ---- Radius ---- */
+  --radius-sm:   8px;     /* small inner elements */
+  --radius-md:   12px;    /* inputs */
+  --radius-tile: 14px;    /* guide: plant image tiles */
+  --radius-lg:   18px;    /* guide: cards */
+  --radius-xl:   24px;    /* bottom sheet top corners */
+  --radius-full: 9999px;  /* guide: buttons, badges, tabs, toggle, progress bar */
+
+  /* ---- Elevation ---- */
+  --shadow-card:  0 8px 20px rgba(30, 50, 35, 0.06);  /* guide */
+  --shadow-sheet: 0 -4px 24px rgba(30, 43, 34, 0.18);
+
+  /* ---- Layout ---- */
+  --content-max-width: 480px;  /* guide targets 320-430px phones; this keeps desktop phone-sized */
+  --page-padding-x:    var(--space-5);
+  --tap-target-min:    44px;   /* minimum touch target for buttons and toggles */
+
+  /* ---- Motion ---- */
+  --transition-fast: 150ms ease;
+}

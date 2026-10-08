@@ -1,0 +1,30 @@
+/* Summary on the left, bar fills the rest of the row */
+.card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+}
+
+.count {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-primary);
+}
+
+.bar {
+  flex: 1;
+  min-width: 0;
+}

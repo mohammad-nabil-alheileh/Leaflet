@@ -1,0 +1,31 @@
+.progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+/* Track */
+.track {
+  flex: 1;
+  height: var(--space-2);
+  overflow: hidden;
+  border-radius: var(--radius-full);
+  background-color: var(--color-track);
+}
+
+.fill {
+  width: var(--progress, 0%);
+  height: 100%;
+  border-radius: inherit;
+  background-color: var(--color-primary);
+  transition: width var(--transition-fast);
+}
+
+/* Percentage label */
+.value {
+  flex-shrink: 0;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+}

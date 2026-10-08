@@ -1,0 +1,92 @@
+/* Layout (matches design/mobile-design-filled.jpg):
+   [tile] [name / meta ........ (•••)]
+   [tile] [badge ............. button]
+   The tile spans both rows; badge and button sit under the text. */
+.card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas:
+    "tile info   more"
+    "tile status status";
+  align-items: center;
+  column-gap: var(--space-3);
+  row-gap: var(--space-2);
+}
+
+.tile {
+  grid-area: tile;
+}
+
+/* Name and room line */
+.info {
+  grid-area: info;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.name {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  overflow-wrap: anywhere;
+}
+
+.meta {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+/* Badge on the left, water button on the right.
+   On very narrow phones the button wraps under the badge. */
+.status {
+  grid-area: status;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+/* Design shows a rounded rectangle, wider than its text, same height as the badge.
+   [data-size] raises specificity above Button's own size rule. */
+.status .waterButton[data-size] {
+  min-height: 28px;
+  min-width: 9rem; /* both labels get the same width, like the design */
+  padding: var(--space-1) var(--space-4);
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-regular);
+}
+
+/* "•••" button: small cream circle in the top-right corner */
+.more {
+  grid-area: more;
+  align-self: start;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-6);
+  height: var(--space-6);
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color var(--transition-fast);
+}
+
+/* Invisible padding so the tap area is still 44px */
+.more::after {
+  content: "";
+  position: absolute;
+  inset: calc((var(--tap-target-min) - var(--space-6)) / -2);
+}
+
+.more:hover {
+  background-color: var(--color-track);
+}
+
+.more > svg {
+  width: var(--space-4);
+  height: var(--space-4);
+}
