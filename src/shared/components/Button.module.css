@@ -1,0 +1,118 @@
+/* Base */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--tap-target-min);
+  padding: var(--space-2) var(--space-5);
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-md); /* designs: rounded rectangle on almost every button */
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  text-align: center;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.button:disabled {
+  opacity: 0.5;
+}
+
+.icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.icon > svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Sizes */
+.button[data-size="sm"] {
+  min-height: 36px;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size-xs);
+}
+
+/* Shapes */
+.button[data-shape="pill"] {
+  border-radius: var(--radius-full); /* designs: only the Add plant page footer */
+}
+
+/* Layout */
+.button[data-full-width] {
+  display: flex;
+  width: 100%;
+}
+
+.button[data-align="start"] {
+  justify-content: flex-start;
+}
+
+/* Variants */
+.button[data-variant="primary"] {
+  background-color: var(--color-primary);
+  color: var(--color-text-on-fill);
+}
+.button[data-variant="primary"]:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+}
+
+.button[data-variant="accent"] {
+  background-color: var(--color-accent);
+  color: var(--color-text-on-accent);
+}
+.button[data-variant="accent"]:hover:not(:disabled) {
+  background-color: var(--color-accent-hover);
+}
+
+.button[data-variant="muted"] {
+  background-color: var(--color-muted-bg);
+  color: var(--color-muted-ink);
+}
+.button[data-variant="muted"]:hover:not(:disabled) {
+  border-color: var(--color-muted-ink);
+}
+
+.button[data-variant="outline"] {
+  background-color: transparent;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+.button[data-variant="outline"]:hover:not(:disabled) {
+  background-color: var(--color-primary-tint);
+}
+
+.button[data-variant="danger"] {
+  background-color: var(--color-accent-tint);
+  border-color: var(--color-accent);
+  color: var(--color-accent-ink);
+}
+.button[data-variant="danger"]:hover:not(:disabled) {
+  background-color: var(--color-accent);
+  color: var(--color-text-on-accent);
+}
+
+.button[data-variant="danger-text"] {
+  background-color: transparent;
+  color: var(--color-accent-ink);
+  padding-inline: var(--space-2);
+}
+.button[data-variant="danger-text"]:hover:not(:disabled) {
+  background-color: var(--color-accent-tint);
+}
+.button[data-variant="neutral"] {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+.button[data-variant="neutral"]:hover:not(:disabled) {
+  border-color: var(--color-text-muted);
+}

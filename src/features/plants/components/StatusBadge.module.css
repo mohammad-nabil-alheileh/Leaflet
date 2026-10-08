@@ -1,0 +1,40 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: 28px; /* same height as the water button */
+  padding: var(--space-1) var(--space-3) var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm); /* design shows a rounded rectangle, not a pill */
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-badge);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge[data-status="watered"] {
+  background-color: var(--color-primary-tint);
+  color: var(--color-primary-ink);
+}
+
+.badge[data-status="needs-water"] {
+  background-color: var(--color-accent-tint);
+  color: var(--color-accent-ink);
+}
+
+/* The icon PNGs are a round medallion on a cream square.
+   Zoom in on the glyph so only the leaf / drop shows, like the design. */
+.icon {
+  flex-shrink: 0;
+  width: var(--space-4);
+  height: var(--space-4);
+  overflow: hidden;
+  border-radius: var(--radius-full);
+}
+
+.icon > img {
+  width: 100%;
+  height: 100%;
+  transform: scale(2.2); /* shows the middle ~58px of the 128px image */
+}

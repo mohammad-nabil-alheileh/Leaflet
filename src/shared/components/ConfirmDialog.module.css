@@ -1,0 +1,42 @@
+/* Centered box: overrides the browser's default <dialog> styles.
+   margin: auto centers it; the global reset (* { margin: 0 }) removes it. */
+.dialog {
+  margin: auto;
+  width: calc(100% - var(--page-padding-x) * 2);
+  max-width: calc(var(--content-max-width) - var(--space-10) * 2);
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--shadow-sheet);
+}
+
+.dialog::backdrop {
+  background-color: var(--color-overlay);
+}
+
+/* Inner area: holds the padding so backdrop clicks can be detected */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-6);
+  text-align: center;
+}
+
+.title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+.message {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}

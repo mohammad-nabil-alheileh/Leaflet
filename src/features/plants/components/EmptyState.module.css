@@ -1,0 +1,55 @@
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--space-4);
+  text-align: center;
+}
+
+/* 176px, close to the design (~40% of the screen width).
+   The PNG is cropped to the plant and its background is transparent. */
+.image {
+  width: 11rem;
+  height: auto;
+}
+
+.title {
+  margin-top: var(--space-3);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+.text {
+  max-width: 28ch;
+  margin-top: var(--space-1);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.button {
+  margin-top: var(--space-5);
+}
+
+/* "Start here" callout under the button, arrow pointing up at it */
+.hint {
+  display: flex;
+  align-self: flex-end;
+  align-items: center;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+  color: var(--color-primary);
+}
+
+.arrow {
+  width: var(--space-8);
+  height: var(--space-6);
+}
+
+.hintLabel {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-tint);
+  color: var(--color-primary-hover);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
